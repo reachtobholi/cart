@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Premium Garam Masala</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f5ef;
+  color: #2f241d;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.product-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.product {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 15px;
+  margin: 12px 0;
+}
+
+.product-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.product-size {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 19px;
+  font-weight: bold;
+  margin-top: 5px;
+  display: block;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.quantity button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  background: #eee;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.quantity span {
+  font-weight: bold;
+  min-width: 20px;
+  text-align: center;
+}
+
+.add-button {
+  width: 100%;
+  padding: 13px;
+  margin-top: 12px;
+  background: #6b2f1a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  opacity: 0.9;
+}
+
+.message {
+  text-align: center;
+  color: #2e7d32;
+  font-weight: bold;
+  margin-top: 15px;
+  display: none;
+}
+
+@media(max-width:600px) {
+
+  .product-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .quantity {
+    align-self: flex-end;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+
+  <div class="header">
+    <h1>Premium Garam Masala</h1>
+  </div>
+
+
+  <!-- PREMIUM GARAM MASALA -->
+
+  <div class="card">
+
+    <div class="product-title">
+      Premium Garam Masala
+    </div>
+
+
+    <!-- 50 GRAM -->
+
+    <div class="product">
+
+      <div class="product-row">
+
+        <div>
+
+          <div class="product-size">
+            50 Gram
+          </div>
+
+          <span class="price">
+            ₹90
+          </span>
+
+        </div>
+
+        <div class="quantity">
+
+          <button
+            onclick="changeQuantity('50g', -1)">
+            −
+          </button>
+
+          <span id="quantity-50g">
+            1
+          </span>
+
+          <button
+            onclick="changeQuantity('50g', 1)">
+            +
+          </button>
+
+        </div>
+
+      </div>
+
+      <button
+        class="add-button"
+        onclick="addToCart(
+          'premium-garam-masala-50g',
+          'Premium Garam Masala',
+          '50 Gram',
+          90,
+          '50g'
+        )">
+
+        Add to Cart
+
+      </button>
+
+    </div>
+
+
+    <!-- 100 GRAM -->
+
+    <div class="product">
+
+      <div class="product-row">
+
+        <div>
+
+          <div class="product-size">
+            100 Gram
+          </div>
+
+          <span class="price">
+            ₹160
+          </span>
+
+        </div>
+
+        <div class="quantity">
+
+          <button
+            onclick="changeQuantity('100g', -1)">
+            −
+          </button>
+
+          <span id="quantity-100g">
+            1
+          </span>
+
+          <button
+            onclick="changeQuantity('100g', 1)">
+            +
+          </button>
+
+        </div>
+
+      </div>
+
+      <button
+        class="add-button"
+        onclick="addToCart(
+          'premium-garam-masala-100g',
+          'Premium Garam Masala',
+          '100 Gram',
+          160,
+          '100g'
+        )">
+
+        Add to Cart
+
+      </button>
+
+    </div>
+
+
+    <!-- 250 GRAM -->
+
+    <div class="product">
+
+      <div class="product-row">
+
+        <div>
+
+          <div class="product-size">
+            250 Gram
+          </div>
+
+          <span class="price">
+            ₹440
+          </span>
+
+        </div>
+
+        <div class="quantity">
+
+          <button
+            onclick="changeQuantity('250g', -1)">
+            −
+          </button>
+
+          <span id="quantity-250g">
+            1
+          </span>
+
+          <button
+            onclick="changeQuantity('250g', 1)">
+            +
+          </button>
+
+        </div>
+
+      </div>
+
+      <button
+        class="add-button"
+        onclick="addToCart(
+          'premium-garam-masala-250g',
+          'Premium Garam Masala',
+          '250 Gram',
+          440,
+          '250g'
+        )">
+
+        Add to Cart
+
+      </button>
+
+    </div>
+
+
+    <!-- SUCCESS MESSAGE -->
+
+    <div
+      id="message"
+      class="message">
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+/*
+====================================================
+CHANGE QUANTITY
+====================================================
+*/
+
+function changeQuantity(product, change) {
+
+  let element =
+    document.getElementById(
+      "quantity-" + product
+    );
+
+  let quantity =
+    parseInt(element.innerText);
+
+  quantity =
+    quantity + change;
+
+  if (quantity < 1) {
+    quantity = 1;
+  }
+
+  element.innerText =
+    quantity;
+}
+
+
+/*
+====================================================
+ADD PRODUCT TO LOCAL STORAGE CART
+====================================================
+*/
+
+function addToCart(
+  id,
+  name,
+  size,
+  price,
+  quantityId
+) {
+
+  /*
+  Get selected quantity
+  */
+
+  let quantity =
+    parseInt(
+      document.getElementById(
+        "quantity-" + quantityId
+      ).innerText
+    );
+
+
+  /*
+  Get existing cart
+  */
+
+  let cart =
+    JSON.parse(
+      localStorage.getItem("bholiSpicesCart")
+    ) || [];
+
+
+  /*
+  Check whether this product/size
+  already exists
+  */
+
+  let existingProduct =
+    cart.find(
+      item => item.id === id
+    );
+
+
+  if (existingProduct) {
+
+    /*
+    If already exists,
+    increase quantity
+    */
+
+    existingProduct.quantity +=
+      quantity;
+
+  }
+
+  else {
+
+    /*
+    Otherwise add new product
+    */
+
+    cart.push({
+
+      id: id,
+
+      name: name,
+
+      size: size,
+
+      price: price,
+
+      quantity: quantity
+
+    });
+
+  }
+
+
+  /*
+  Save updated cart
+  */
+
+  localStorage.setItem(
+    "bholiSpicesCart",
+    JSON.stringify(cart)
+  );
+
+
+  /*
+  Show confirmation
+  */
+
+  let message =
+    document.getElementById(
+      "message"
+    );
+
+  message.innerText =
+    "✓ " +
+    size +
+    " Premium Garam Masala added to cart";
+
+  message.style.display =
+    "block";
+
+
+  /*
+  Reset quantity to 1
+  */
+
+  document.getElementById(
+    "quantity-" + quantityId
+  ).innerText = 1;
+
+
+  /*
+  Hide message after 3 seconds
+  */
+
+  setTimeout(function() {
+
+    message.style.display =
+      "none";
+
+  }, 3000);
+
+}
+
+</script>
+
+</body>
+</html>
