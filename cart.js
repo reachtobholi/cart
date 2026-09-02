@@ -83,7 +83,7 @@
   function totals() {
     const cart = get();
     const subtotal = cart.reduce((sum, item) => sum + (Number(item.price) * Number(item.qty)), 0);
-    const delivery = subtotal === 0 || subtotal >= 599 ? 0 : 60;
+    const delivery = subtotal === 0 || subtotal >= 499 ? 0 : 60;
     return { subtotal, delivery, total: subtotal + delivery };
   }
 
@@ -149,9 +149,9 @@
     if (delivery) delivery.textContent = t.delivery ? money(t.delivery) : (t.subtotal ? 'FREE' : '₹0');
     if (total) total.textContent = money(t.total);
     if (note) {
-      note.textContent = t.subtotal >= 599
+      note.textContent = t.subtotal >= 499
         ? '🎉 You qualify for FREE delivery!'
-        : 'Add ' + money(599 - t.subtotal) + ' more for FREE delivery.';
+        : 'Add ' + money(499 - t.subtotal) + ' more for FREE delivery.';
     }
   }
 
